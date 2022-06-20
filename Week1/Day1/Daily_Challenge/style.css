@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    height: 80px;
+    background-color: rgb(33, 16, 16);
+    position: relative;
+}
+.logodiv {
+    display: inline-block;
+    height: 100%;
+    margin-left: 5%;
+}
+.logo {
+    display: block;
+    box-sizing: border-box;
+    padding: 8px;
+    height: 100%;
+}
+.nav {
+    display: inline-block;
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 10%;
+    width: 85%;
+}
+.navdiv {
+    position: relative;
+}
+.ul {
+    position: absolute;
+    right: 0;
+}
+.li {
+    display: inline-block;
+    color: #fff;
+    font-size: 3em;
+    height: 100%;
+    margin: 0 20px;;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.main {
+    background-image: url(images/spider_man.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 56%;
+    position: relative;
+}
+.heading {
+    color: rgb(33, 16, 16);
+    font-size: 5em;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}

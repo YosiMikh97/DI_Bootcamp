@@ -1,0 +1,35 @@
+body {
+    background-color: grey;
+}
+.form {
+    display: block;
+    width: 100%;
+    padding: 0 auto;
+    text-align: center;
+    margin: 10px 5px;
+    text-decoration: underline;
+    color: black;
+}
+input[type="checkbox"]:not(:checked) + label {
+    color: #fff;
+}
+
+.wrap_em_unit {
+    border: 2px solid black;
+    font-size: 1em
+}
+.em_unit {
+    border: 2px solid red;
+    font-size: 32px;
+    padding: 32px;
+}
+.em_unit_small {
+    border: 2px solid red;
+    font-size: 2em;
+    padding: 1em;
+}
+.em_unit_small_v {
+    border: 2px solid red;
+    font-size: 3vw;
+    padding-left: 40vw;
+}

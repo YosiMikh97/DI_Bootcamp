@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #deeaf6;
+}
+.nav {
+    position: relative;
+    width: 85%;
+    left: 80px;
+}
+.navelem {
+    display: inline-block;
+    padding: 20px;
+}
+.navleft {
+    color: #1A2A2C;
+}
+.navright {
+    position: absolute;
+    right: 5%;
+    background-color: rgb(29, 155, 240);
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: #F8F9FA;
+    border-radius: 10px;
+
+}
+.main1 {
+    background-image: url(https://images.pexels.com/photos/1533720/pexels-photo-1533720.jpeg?auto=compress&cs=tinysrgb&w=1200);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: relative;
+    padding-bottom: 42%;
+    height: 0;
+}
+.headingdiv {
+    width: 38%;
+    position: absolute;
+    top: 33%;
+    left: 30%;
+}
+.heading {
+    text-align: center;
+    color: #008B8B;
+    padding: 20px;
+}
+.email {
+    box-sizing: border-box;
+    color: grey;
+    width: 45%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    padding-left: 7px;
+    margin-left: 120px;
+}
+.button {
+    background-color: rgb(29, 155, 240);
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    height: 28px;
+    padding: 0 10px;
+}
+.buttondiv {
+    display: block;
+    padding: 5 10;
+    position: relative;
+}
+.main2 {
+    background-color: #deeaf6;
+}
+.fa-solid {
+    color: blue;
+}
