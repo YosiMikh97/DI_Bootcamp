@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(46, 46, 46);
+}
+.main {
+    display: flex;
+}
+.aside {
+    background-color: rgb(222, 242, 247);
+    display: inline-block;
+    flex-direction: column;
+    width: 20%;
+    padding: 30px 30px 30px 30px;
+    margin: 10px 0px 0px 10px;
+}
+
+.image {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.photo {
+    width: 10vw;
+    border-radius: 100em;
+}
+.heading {
+    color: blueviolet;
+    margin: 5px 0px 5px 5px;
+}
+.asidecontent {
+    margin-left: 5px;
+}
+.contactitem {
+    margin: 0px 0px 5px 0px;
+}
+.contactlink {
+    text-decoration: none;
+    padding-left: 7px;
+}
+.edutitle {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.edudate {
+    font-size: 1em;
+    color: rgb(134, 132, 132);
+}
+.asideul {
+    margin: 5px 0px 5px 15px;
+}
+.asideli {
+    margin: 0px 0px 3px 0px;
+}
+.fa-lg {
+    color: blueviolet;
+}
+.article {
+    width: 32%;
+    display: inline-block;
+    border: 1px solid rgb(222, 242, 247);
+    margin-top: 10px;
+    padding: 30px 10px 30px 30px;
+}
+.name {
+    color: blueviolet;
+    font-size: 2em;
+    margin: 0px 5px 10px 10px;
+}
+.desc {
+    margin: 0px 5px 10px 10px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+.about {
+    margin: 0px 5px 10px 10px;
+}
+.card {
+    margin: 10px 5px 10px 10px;
+}
+.aboutul {
+    margin: 5px 5px 10px 10px;
+}
+.aboutli {
+    margin: 0px 0px 3px 0px;
+}
+.companyname {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.jobtitle {
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 1em;
+}
+.cardperiod {
+    margin-bottom: 3px;
+    color: rgb(134, 132, 132);
+}
+.carddepartment {
+    margin-bottom: 3px;
+}
+.cardul {
+    margin: 5px 5px 10px 10px;
+}
+.cardli {
+    margin: 0px 0px 3px 0px;
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    .aside {
+        width: 25%;
+    }
+    .article {
+        width: 40%;
+    }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .aside {
+        width: 40%;
+    }
+    .article {
+        width: 60%;
+    }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+    .aside {
+        width: 33%;
+        padding: 10px;
+    }
+    .article {
+        width: 50%;
+        padding: 15px 5px 15px 15px;
+    }
+    body {
+        font-size: 10px;
+    }
+    .photo {
+        width: 12vw;
+    }
+}
+@media all and (max-width: 480px) {
+    .aside {
+        width: 35%;
+        padding: 10px;
+    }
+    .article {
+        width: 55%;
+        padding: 10px 5px 10px 10px;
+    }
+    body {
+        font-size: 8px;
+    }
+    .photo {
+        width: 15vw;
+    }
+}

@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    height: 60px;
+    background-color: #000;
+}
+.nav {
+    position: relative;
+}
+i {
+    color: #fff;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.products {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+    display: block;
+    padding: 20px 0;
+}
+.navleft {
+    display: inline-block;
+    position: absolute;
+    left: 10%;
+}
+.navright {
+    display: inline-block;
+    position: absolute;
+    right: 10%;
+}
+.adiv {
+    display: inline-block;
+    height: 60px;
+}
+.card {
+    background-color: #fff;
+    width: 15em;
+    border: solid 2px #ccc;
+    padding: 1em;
+    display: inline-block;
+    margin-bottom: 3em;
+    margin-right: 4em;
+}
+.image {
+    display: block;
+    width: 100%;
+}
+.cardtitle {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+footer {
+    background-color: #000;
+    height: 45px;
+    position: relative;
+    bottom: 0;
+}
+.footerdiv {
+    color: #fff;
+    position: absolute;
+    height: 100%;
+    left: 43%;
+    top: 30%;
+}
