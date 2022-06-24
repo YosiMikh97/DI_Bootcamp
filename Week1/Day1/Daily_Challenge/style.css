@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
 }
-.header {
+
+/*.header {
     height: 80px;
     background-color: rgb(33, 16, 16);
     position: relative;
@@ -57,5 +58,132 @@ a {
     font-size: 5em;
     position: absolute;
     top: 20%;
-    right: 5%;
+    left: 70%;
+}
+.paragraph {
+    color: #fff;
+    font-size: 1.8em;
+    width: 30%;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+}*/
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    background-color: rgb(33, 16, 16);
+    padding: 0 3vw;
+}
+.logodiv {
+    height: 100%;
+    margin-right: auto;
+}
+.logo {
+    display: block;
+    height: 90%;
+    margin-left: auto;
+    padding: 5% 0;
+}
+.li {
+    display: inline-block;
+    padding: 20px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+}
+.main {
+    background-image: url(images/spider_man.png);
+    height: 90vh;
+    position: relative;
+}
+.heading {
+    color: rgb(33, 16, 16);
+    font-size: 5em;
+    position: absolute;
+    top: 20%;
+    left: 70%;
+}
+.paragraph {
+    color: #fff;
+    font-size: 1.8em;
+    width: 30%;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 2170px) {
+    .heading {
+        left: 5%;
+    }
+    .paragraph {
+        left: 5%;
+        top: 40%;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    .heading {
+        left: 5%;
+    }
+    .paragraph {
+        left: 5%;
+        top: 40%;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .heading {
+        left: 5%;
+        font-size: 5em;
+    }
+    .paragraph {
+        left: 5%;
+        top: 40%;
+        font-size: 1.8em;
+        width: 45%;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    .heading {
+        left: 5%;
+        font-size: 5em;
+    }
+    .paragraph {
+        left: 5%;
+        top: 40%;
+        font-size: 1.8em;
+        width: 60%;
+    }
+    a {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .heading {
+        left: 5%;
+        font-size: 3em;
+        top: 5%;
+    }
+    .paragraph {
+        left: 5%;
+        top: 15%;
+        font-size: 1.6em;
+        width: 80%;
+    }
+    a {
+        font-size: 1em;
+    }
+    .li {
+        padding: 20px 5px;
+    }
+    .header {
+        height: 7vh;
+    }
 }
