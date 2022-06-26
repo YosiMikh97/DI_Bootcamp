@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.main {
+    width: 720px;
+    height: 720px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+div div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+div div div {
+    border: 1px solid white;
+    background-color: grey;
+}
+.div1 {
+    background-color: rgb(227, 227, 227);
+}
+.div2 {
+    background-color: rgb(174, 174, 174);
+}
+.div3 {
+    background-color: rgb(94, 94, 94);
+}
+.div4 {
+    background-color: rgb(43, 43, 43);
+}
