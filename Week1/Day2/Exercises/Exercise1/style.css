@@ -61,11 +61,11 @@ i {
 }
 /*box-shadow isn't working*/
 .card:hover {
-    border: 1px solid grey;
+    box-shadow: 3px 3px #dbdbdb;
 }
 /*hover isn't working*/
-.imgicons:hover {
-    z-index: 5;
+.card:hover .imgicons {
+    z-index: 10;
 }
 .cardinfo {
     display: flex;
