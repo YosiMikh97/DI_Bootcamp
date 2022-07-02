@@ -12,43 +12,6 @@
 // If the user didn’t enter a number between 0 and 10 alert “Sorry it’s not a good number, Goodbye”.
 // Else (ie. he entered a number between 0 and 10), create a variable named computerNumber where the value is a random number between 0 and 10 (Hint: Use the built-in Math.random() function). Make sure that the number is rounded.
 
-function askUserNumber() {
-    userNumber = prompt("Give me number from 0 to 10");
-    console.log("userNumber is: "+userNumber);
-    return userNumber;
-}
-function numberCheck () {
-    if (isNaN(userNumber) || userNumber=="") {
-        return alert("Sorry Not a number, Goodbye");
-    } else if (userNumber<0 || userNumber>10) {
-        return alert("Sorry it’s not a good number, Goodbye");
-    } else {
-        computerNumber = Math.floor(Math.random() * 11);
-    }
-    console.log("computerNumber is: "+computerNumber);
-    return computerNumber;
-}
-let attempt = 0;
-function execFunction() {
-    
-    while (attempt<3) {
-        console.log('attempt',attempt);
-        askUserNumber();
-        numberCheck();
-        compareNumbers(userNumber, computerNumber);
-        attempt = attempt + 1;
-    }
-    
-}
-function playTheGame() {
-    let ret = confirm("Do you want to play the game?");
-    if (ret == false) {
-        alert("No problem, Goodbye");
-    } else {
-        execFunction();
-    }
-}
-
 // Second Part
 
 // 1. Outside of the playTheGame() function, create a new function named compareNumbers(userNumber,computerNumber) that takes 2 parameters : userNumber and computerNumber
@@ -58,17 +21,58 @@ function playTheGame() {
 // c. If userNumber is lower than computerNumber, alert “Your number is smaller then the computer’s, guess again” (Hint: use the built-in prompt() function to ask the user for a new number).
 // d. If the user guessed more than 3 times, alert “out of chances” and exit the function.
 
-function compareNumbers(userNumber,computerNumber) {
-    console.log(userNumber, computerNumber);
-    console.log(attempt);
-    if (userNumber == computerNumber) {
-        alert("WINNER");
-    } else if (userNumber>computerNumber) {
-        alert("Your number is bigger than the computer’s, guess again");
-        execFunction();
-    } else if (userNumber<computerNumber) {
-        alert("our number is smaller then the computer’s, guess again");
+function askUserNumber() {
+    userNumber = prompt("What is your number from 0 to 10?");
+    console.log("userNumber is: "+userNumber);
+    numberCheck();
+    askComputerNumber();
+}
+function numberCheck () {
+    if (isNaN(userNumber) || userNumber=="") {
+        alert("Sorry Not a number, Try again");
+        return askUserNumber();
+    } else if (userNumber<1 || userNumber>99) {
+        alert("Sorry it’s not a good number, Try again");
+        return askUserNumber();
+    } else {
+        return userNumber;
+    }
+}
+function askComputerNumber () {
+    computerNumber = Math.floor(Math.random() * 11);
+    return computerNumber;
+}
+let attempt = 0;
+function execFunction() {
+    while (attempt<3) {
+        attempt += 1;
+        askUserNumber();
+        compareNumbers(userNumber, computerNumber);
+        if (attempt == 3) {
+            alert("Out of chances");
+        }
+    }
+}
+function playTheGame() {
+    let ret = confirm("Do you want to play the game?");
+    if (ret == false) {
+        alert("No problem, Goodbye");
+    } else {
         execFunction();
     }
 }
-
+for (let i=0; i<3; i++) {
+    function compareNumbers(userNumber,computerNumber) {
+        console.log(userNumber, computerNumber);
+        if (userNumber == computerNumber) {
+            alert("WINNER");
+            return true;
+        } else if (userNumber>computerNumber) {
+            alert("Your number is bigger than the computer’s, guess again");
+            return false;
+        } else if (userNumber<computerNumber) {
+            alert("Your number is smaller then the computer’s, guess again");
+            return false;
+        }
+    }
+}
