@@ -42,8 +42,6 @@ for (let i = 1; i<=stock; i++) {
     stock -= i;
     if (i==1) {
         console.log(`Take ${i} down, pass it around`);
-    } else if (i>=stock) {
-        console.log(`Take ${i} down, pass them around`);
     } else {
         console.log(`Take ${i} down, pass them around`);
     };
