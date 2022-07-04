@@ -15,8 +15,6 @@ for (let i=0; i<planets.length; i++) {
     section.appendChild(div);
     let div2 = document.getElementsByTagName("div")[i];
     div2.setAttribute("class", `planet planet${i}`);
-}
-for (let k=0; k<planets.length; k++) {
-    let div3 = document.getElementsByClassName(`planet${k}`);
-    div3[0].style.backgroundColor = `#${k}${k}${k}${k}${k}${k}`;
+    let div3 = document.getElementsByClassName(`planet${i}`);
+    div3[0].style.backgroundColor = `#${i}${i}${i}${i}${i}${i}`;
 }
