@@ -37,17 +37,59 @@
 // )
 // 7. BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fade css animation” on Google)
 
+//Exercise2
+
+// 1. Retrieve the form and console.log it.
+let info = [];
+let form = document.forms[0];
+console.log(form);
+// 2. Retrieve the inputs by their id and console.log them.
+form.addEventListener("submit", action);
+function action (event) {
+    event.preventDefault();
+    let objInput = {
+        firstName : form.elements.fname.value,
+        lastName : form.elements.lname.value
+    }
+    info.push(objInput);
+    console.log(info);
+    displayData();
+}
+
+// element.x
+
+let input = form.getElementsByTagName("input");
+console.log(input);
+// 3. Retrieve the inputs by their name attribute and console.log them.
+// 4. When the user submits the form (ie. submit event listener)
+// use event.preventDefault(), why ?
+// get the values of the input tags,
+// make sure that they are not empty,
+// create an li per input value,
+// then append them to a the <ul class="usersAnswer"></ul>, below the form.
+function displayData () {
+	let ul = document.getElementsByClassName("userAnswer");
+	for (let i = 0; i<info.length; i++){
+		let eachData = info[i];
+		let li = document.createElement("li");
+		let text = document.createTextNode(`${eachData["fname"]} & ${eachData["lname"]}`)
+		li.appendChild(text);
+		ul.appendChild(li);
+	}
+}
+
+
 //Exercise3
 
 // 1. Declare a global variable named allBoldItems.
-let allBoldItems;
+// let allBoldItems;
 // 2. Create a function called getBold_items() that takes no parameter. This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
-let bold = document.getElementsByTagName("strong");
-function getBold_items() {
+// let bold = document.getElementsByTagName("strong");
+// function getBold_items() {
     // for (let i=0; i<bold.length; i++) {
-        allBoldItems = bold;
+        // allBoldItems = bold;
     // }
-}
+// }
 // 3. Create a function called highlight() that changes the color of all the bold text to blue. 
 
 // 4. Create a function called return_normal() that changes the color of all the bold text back to black. 
