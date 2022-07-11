@@ -109,6 +109,5 @@
 //             } else {
 //                 console.log(`${index+1}${ordinal[index+1]} choice is ${element}`);
 //             }
-            
 //         }
 //     )
