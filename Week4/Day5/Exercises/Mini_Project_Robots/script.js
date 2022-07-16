@@ -98,7 +98,8 @@ robots.forEach((elem) => {
 )
 
 let input = document.getElementById("search");
-const fun = () => {
+input.addEventListener("keyup",fun)
+function fun() {
     let newRobots = [];
     newRobots.push(robots.filter(elem => elem.name.toLowerCase().includes(input.value.toLowerCase())));
     for (let i = 0; i<robots.length; i++) {
@@ -108,31 +109,7 @@ const fun = () => {
             divOld.style.display = "none";
         }
     }
-    newRobots[0].forEach((elem) => {
-        let div = document.createElement("div");
-        div.classList.add("character");
-        main.appendChild(div);
-        div.setAttribute("id",elem.id);
-        let imgdiv = document.createElement("div");
-        imgdiv.classList.add("imgdiv");
-        let img = document.createElement("img");
-        img.classList.add("img");
-        img.setAttribute("src",elem.image);
-        div.appendChild(imgdiv);
-        imgdiv.appendChild(img);
-        let pname = document.createElement("p");
-        pname.classList.add("pname");
-        let name = document.createTextNode(elem.name);
-        pname.appendChild(name);
-        div.appendChild(pname);
-        let pmail = document.createElement("p");
-        pmail.classList.add("pmail");
-        let mail = document.createTextNode(elem.email);
-        pmail.appendChild(mail);
-        div.appendChild(pmail);
-    }
-    )
     return newRobots;
 }
-input.addEventListener("keyup",fun)
+
 

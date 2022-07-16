@@ -44,6 +44,7 @@
     background-color: rgb(31, 216, 216);
     border-radius: 10px;
     padding: 1em 1em 2em 1em;
+    max-height: 50vh;
 }
 .img {
     border-radius: 200px;
