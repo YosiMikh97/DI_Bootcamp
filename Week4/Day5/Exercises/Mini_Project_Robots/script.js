@@ -101,12 +101,14 @@ let input = document.getElementById("search");
 input.addEventListener("keyup",fun)
 function fun() {
     let newRobots = [];
-    newRobots.push(robots.filter(elem => elem.name.toLowerCase().includes(input.value.toLowerCase())));
+    newRobots.push(robots.filter(elem => elem.name.toLowerCase().includes(input.value.toLowerCase()) || elem.email.toLowerCase().includes(input.value.toLowerCase())));
     for (let i = 0; i<robots.length; i++) {
         let a = robots[i];
         let divOld = document.getElementById(`${robots[i].id}`);
         if (newRobots[0].includes(a) == false) { 
             divOld.style.display = "none";
+        } else {
+            divOld.style.display = "block";
         }
     }
     return newRobots;
