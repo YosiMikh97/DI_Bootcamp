@@ -74,3 +74,15 @@ const divide = (numerator, denominator) => {
 }
 divide(6,3);
 divide(6,0)
+
+// ## Exercise 2
+// Using the code below:
+const someVar = 'Cannot be reassigned';
+try {
+    someVar = 'Still going to try';
+} catch(e) {
+    console.log(e);
+}
+console.log("after")
+// 1. Which type of error will be thrown ? Look on the different types errors on Google
+// 2. Is the console.log("after") will be shown on the console ?
