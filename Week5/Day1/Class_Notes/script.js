@@ -43,12 +43,34 @@ let jsonString = `
         }
     }
 }`
-let toJson = JSON.parse(jsonString);
-console.log(toJson);
-let x = toJson.quiz.sport.q1.options;
-console.log(x);
-for (let i=0; i<x.length; i++) {
-    console.log(x[i]);
+// let toJson = JSON.parse(jsonString);
+// console.log(toJson);
+// let x = toJson.quiz.sport.q1.options;
+// console.log(x);
+// for (let i=0; i<x.length; i++) {
+//     console.log(x[i]);
+// }
+// let toString = JSON.stringify(toJson, null, 2);
+// console.log(toString);
+
+// # Exceptions
+// ## Exercise 1
+// Write a function called `divide` that takes two parameters: a numerator and a denominator.
+// Your function should return the result of numerator / denominator.
+// However, if denominator is zero you should throw the error, "Attempted to divide by zero."
+const divide = (numerator, denominator) => {
+    let result;
+    try {
+		if (denominator !== 0) {
+			result = numerator/denominator;
+		} else {
+			throw new RangeError("Attempted to divide by zero.")
+		}
+	} catch (error) {
+		console.log(error.message)
+	} finally {
+		console.log(result)
+	}
 }
-let toString = JSON.stringify(toJson, null, 2);
-console.log(toString);
+divide(6,3);
+divide(6,0)
