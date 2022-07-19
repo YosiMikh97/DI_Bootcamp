@@ -41,9 +41,15 @@ const displayUser = (robots) => {
 	let results = document.getElementById("results")
     for (let i = 0; i<3; i++) {
         let li = document.createElement("li");
-		li.textContent = `${robots[i].name} - ${robots[i].email} - ${robots[i].address.city}`;
+		li.textContent = `${robots[i].name} - ${robots[i].email} - ${robots.address.city}`;
 		results.appendChild(li);
     }
+	// robots.forEach(info => {
+	// 	let li = document.createElement("li");
+	// 	li.textContent = `${info.name} - ${info.email} - ${info.address.city}`;
+	// 	results.appendChild(li);
+	// });
+
 }
 
 const displayError = (req) => {
