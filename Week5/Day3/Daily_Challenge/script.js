@@ -6,37 +6,40 @@
 // 3. The second function called sortWords(), takes an array of words uppercased as an argument
 // If the array length is bigger than 4, resolve the promise. The value of the resolved promise is the array of words sorted in alphabetical order.
 // else, reject the promise with a reason.
-const makeAllCaps = (array) => {
-    const promise = new Promise((resolve, reject) => {
-        if (array.every(checkType)) {
-            resolve(array.forEach((elem) => elem.toUpperCase()));
-        } else {
-            reject("Bad array");
-        }
-    })
-    return promise;
-}
-makeAllCaps(["hello", "world", "sun", "bus"])
-.then(res => console.log(res))
-.catch(error => console.log(error))
+// let words = ["hello", "world", "sun", "bus"];
+// const makeAllCaps = (array) => {
+//     const promise = new Promise((resolve, reject) => {
+//         if (checkType(array)) {
+//             resolve(array.forEach((elem) => elem.toUpperCase()));
+//         } else {
+//             reject("Bad array");
+//         }
+//     })
+//     return promise;
+// }
+// makeAllCaps(words)
+// .then(res => console.log(res))
+// .catch(error => console.log(error))
 
-function checkType (word) {
-    return typeof word === "string";
-}
+// function checkType (array) {
+//     array.every((elem) => {
+//         return typeof elem === "string";
+//     })
+// }
 
-const sortWords = (array) => {
-    const promise = new Promise((resolve, reject) => {
-        if (array.length > 4) {
-            resolve(array.sort((a,b) => a - b));
-        } else {
-            reject("Bad array");
-        }
-    })
-    return promise;
-}
-sortWords(["HELLO", "WORLD", "SUN", "BUS", "PHONE"])
-.then(res => console.log(res))
-.catch(error => console.log(error))
+// const sortWords = (array) => {
+//     const promise = new Promise((resolve, reject) => {
+//         if (array.length > 4) {
+//             resolve(array.sort());
+//         } else {
+//             reject("Bad array");
+//         }
+//     })
+//     return promise;
+// }
+// sortWords(["HELLO", "WORLD", "SUN", "BUS", "PHONE"])
+// .then(res => console.log(res))
+// .catch(error => console.log(error))
 
 // Daily_Challenge2
 
@@ -92,11 +95,11 @@ let morse = `{
 // this function converts the morse json string provided above to a morse javascript object.
 // if the morse javascript object is empty, throw an error (use reject)
 // else return the morse javascript object (use resolve)
-let morseJS = {};
+let morseObjJS = {};
 const toJs = (data) => {
     const promise = new Promise((resolve,reject) => {
         let obj = JSON.parse(data);
-        if (obj.length>0) {
+        if (Object.keys(obj).length>0) {
             resolve(obj);
         } else {
             reject("ERROR");
@@ -105,9 +108,9 @@ const toJs = (data) => {
     return promise;
 }
 toJs(morse)
-.then(res => morseJS = res)
+.then(res => morseObjJS = res)
 .catch(error => console.log(error))
-console.log(morseJS);
+console.log(morseObjJS);
 // 3. The second function called toMorse(morseJS), takes one argument: the new morse javascript object.
 // This function asks the user for a word or a sentence.
 // if the user entered a character that doesn’t exist in the new morse javascript object, throw an error. (use reject)
@@ -116,7 +119,7 @@ console.log(morseJS);
 // if the user entered the word "¡Hola!", the promise rejects because the character "¡" doesn't exist in the morse javascript object
 
 let userText = prompt("I need a text from you");
-const textCheck = (userText) => userText.forEach((elem) => elem === morseJS)
+const textCheck = (userText) => userText.forEach((elem) => elem === morseObjJS)
 const userTextToArray = (userText) => {
     newArray = [];
     let userArray = userText.split("");
@@ -126,7 +129,7 @@ const userTextToArray = (userText) => {
 const arrayTranslation = (userTextToArray) => {
     let userMorse = [];
     for (let i=0; i<userTextToArray.length; i++) {
-        userMorse.push(morseJS.userTextToArray[i]);
+        userMorse.push(morseObjJS.userTextToArray[i]);
     }
     return userMorse;
 }
@@ -137,7 +140,7 @@ const toMorse = (morseJS) => {
         reject("ERROR");
     }
 }
-toMorse(morseJS)
+toMorse(morseObjJS)
 .then(res => console.log(res))
 .catch(error => console.log(error))
 
