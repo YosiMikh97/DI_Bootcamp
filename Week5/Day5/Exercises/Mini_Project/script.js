@@ -3,7 +3,9 @@ let btn = document.getElementById("button");
 btn.addEventListener("click",retrieveCharacter);
 
 const createLoader = () => {
+    // delete the content of the container
     let loader = document.createElement("i");
+    // look at documentation to add several classes at the classes
     loader.classList.add("fa-solid");
     loader.classList.add("fa-spinner");
     loader.classList.add("fa-spin-pulse");
@@ -17,56 +19,61 @@ const removeLoader = () => {
     loaderdiv.style.display = "none";
 }
 
+const numberCreation = () => Math.floor(Math.random() * 83) + 1;
 
+const createURL = () => `https://www.swapi.tech/api/people/${numberCreation()}`;
 
-const numberCreation = () => {
-    let number = Math.floor(Math.random() * 83) + 1
-    return number;
-}
-
-const createURL = () => {
-    return `https://www.swapi.tech/api/people/${numberCreation()}`; 
-}
 async function getRestData(link) {
     let response = await fetch(link);
     let result = await response.json();
-    let final = await result;
+    // let final = await result;
     if (response.status !== 200) {
         throw new Error("Smth went wrong");
     } else {
-        return final;
+        return result;
     }
 }
-async function getHomeWorld(link) {
-    let homeworld = await getRestData(link);
-    let final = await homeworld;
-    return final;
-}
+// async function getHomeWorld(link) {
+//     let homeworld = await getRestData(link);
+//     let final = await homeworld;
+//     return final;
+// }
 
 async function getData() {
-    let response = await fetch(createURL());
-    let result = await response.json();
-    let final = await result;
-    let obj = {};
-    obj.name = final["result"]["properties"]["name"];
-    obj.height = final["result"]["properties"]["height"];
-    obj.gender = final["result"]["properties"]["gender"];
-    obj.birthyear = final["result"]["properties"]["birth_year"];
-    let smth = await getHomeWorld(final["result"]["properties"]["homeworld"]);
-    obj.homeworld = smth["result"]["properties"]["name"];
-    if (response.status !== 200) {
-        throw new Error("Smth went wrong");
-    } else {
-        return obj;
-    }
+    let response = await getRestData(createURL());
+    // let response = await fetch(createURL());
+    // let result = await response.json();
+    // let final = await result;
+    const {result:{ properties: {
+        name,height,gender,birth_year,homeworld
+        }
+    }} = response;
+
+    // let smth = await getHomeWorld(homeworld);
+    let smth = await getRestData(homeworld)
+
+    let obj = {
+        name, 
+        height, 
+        gender, 
+        birth_year,
+        homeworld : smth["result"]["properties"]["name"]
+    };
+
+    // if (response.status !== 200) {
+    //     throw new Error("Smth went wrong");
+    // } else {
+    //     return obj;
+    // }
+    return obj;
 }
 
-getData()
-.then(res => res
-)
+// getData()
+// .then(res => res)
 
 async function createBody() {
     let obj = await getData();
+    removeLoader()
     let container = document.getElementById("container");
     let main = document.createElement("div");
     main.classList.add("main");
@@ -99,6 +106,6 @@ async function createBody() {
 }
 
 async function retrieveCharacter() {
-    // createLoader();
+    createLoader();
     createBody();
 }
