@@ -1,0 +1,15 @@
+
+-- INSERT INTO customers (first_name, last_name)
+-- VALUES
+-- ('Greg','Jones'),
+-- ('Sandra','Jones'),
+-- ('Scott','Scott'),
+-- ('Trevor','Green'),
+-- ('Melanie','Johnson');
+-- SELECT * FROM customers;
+-- SELECT * FROM items;
+-- SELECT * FROM items WHERE item_price > 80;
+-- SELECT * FROM items WHERE item_price <= 300;
+-- SELECT * FROM customers WHERE last_name = 'Smith';
+-- SELECT * FROM customers WHERE last_name = 'Jones';
+-- SELECT * FROM customers WHERE first_name != 'Scott';
