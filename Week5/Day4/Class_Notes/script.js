@@ -70,7 +70,7 @@ fifthFun()
 // Create 3 functions :  fetchWord(), fetchGif(word) and appendGifToBody(gifUrl)
 async function fetchWord () {
 	try {
-        let promise = await fetch('http://random-word-api.herokuapp.com/word?number=1')
+        let responseFetch = await fetch('http://random-word-api.herokuapp.com/word?number=1')
         let response = await promise.json()
         .then(result => {
             let [word] = result;

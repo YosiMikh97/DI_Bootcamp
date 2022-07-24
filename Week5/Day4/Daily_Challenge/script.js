@@ -43,16 +43,14 @@ const myFun = async(lat,lng) => {
 }
 myFun()
 
-let form = document.forms.form;
-let latitudeParis = document.getElementById("latitudeFirst")
+let latitudeParis = document.getElementById("latitudeFirst");
+let longitudeParis = document.getElementById("longitudeFirst");
+let latitudeNewYork = document.getElementById("latitudeSecond");
+let longitudeNewYork = document.getElementById("longitudeSecond");
 let btn = document.getElementById("button");
 btn.addEventListener("click", getData);
 function getData(elem) {
     elem.preventDefault();
-    let latitudeParis = document.getElementById("latitudeFirst");
-    let longitudeParis = document.getElementById("longitudeFirst");
-    let latitudeNewYork = document.getElementById("latitudeSecond");
-    let longitudeNewYork = document.getElementById("longitudeSecond");
     let obj = {};
     obj[latitudeParis.name] = latitudeParis.value;
     obj[longitudeParis.name] = longitudeParis.value;
